@@ -27,8 +27,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-wt-tHl" userLabel="Speed View">
                                         <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Start!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGW-mu-uFc">
-                                                <rect key="frame" x="32" y="80" width="311.5" height="62.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LETS RİDE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGW-mu-uFc">
+                                                <rect key="frame" x="37.5" y="80" width="300" height="62.5"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="54"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -52,7 +52,8 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="ZNs-Kv-U3L"/>
                                                             <constraint firstAttribute="height" constant="60" id="iPe-95-mlQ"/>
                                                         </constraints>
-                                                        <state key="normal" title="Start"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <state key="normal" title="START"/>
                                                         <connections>
                                                             <action selector="startButton:" destination="shx-s0-zal" eventType="touchUpInside" id="iGL-M1-ZJz"/>
                                                         </connections>
@@ -63,7 +64,8 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="fON-20-Cah"/>
                                                             <constraint firstAttribute="height" constant="60" id="frz-Wf-re9"/>
                                                         </constraints>
-                                                        <state key="normal" title="Map"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <state key="normal" title="MAP"/>
                                                         <connections>
                                                             <action selector="openMap:" destination="shx-s0-zal" eventType="touchUpInside" id="lo5-1f-Euh"/>
                                                         </connections>
@@ -74,6 +76,7 @@
                                                             <constraint firstAttribute="height" constant="60" id="CeV-9O-joe"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="a5x-OM-cCP"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <state key="normal" title="HUD"/>
                                                     </button>
                                                 </subviews>

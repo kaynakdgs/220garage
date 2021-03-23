@@ -15,12 +15,16 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
+    var startLocation = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        startButton.setTitleColor(UIColor.green, for: .normal)
         
     }
     
@@ -32,9 +36,19 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     
     @IBAction func startButton(_ sender: UIButton) {
-        
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        if startLocation {
+            startLocation = false
+            startButton.setTitle("STOP", for: .normal)
+            startButton.setTitleColor(UIColor.red, for: .normal)
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        } else {
+            startLocation = true
+            startButton.setTitle("START", for: .normal)
+            startButton.setTitleColor(UIColor.green, for: .normal)
+            statusLabel.text = "LETS RİDE!"
+            locationManager.stopUpdatingLocation()
+        }
         
     }
     
@@ -44,7 +58,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             
         print(location.speed)
             
-        locationManager.delegate = locationDelegate
+        locationManager.delegate = self
         locationManager.startUpdatingLocation()
             
         statusLabel.text = "\(location.speed)"
