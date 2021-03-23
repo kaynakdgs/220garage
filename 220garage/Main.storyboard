@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="ozV-W2-5qW">
             <objects>
-                <viewController id="shx-s0-zal" customClass="HomeViewController" customModule="_20GarageSpeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="shx-s0-zal" customClass="HomeViewController" customModule="_20garage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9r-0g-2RW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                                                             <constraint firstAttribute="height" constant="60" id="CeV-9O-joe"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="a5x-OM-cCP"/>
                                                         </constraints>
-                                                        <state key="normal" title="Stop"/>
+                                                        <state key="normal" title="HUD"/>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -109,7 +109,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MySecondScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="_20GarageSpeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MySecondScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="_20garage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

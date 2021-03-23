@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 
-class locationDelegate: NSObject, CLLocationManagerDelegate {
+class LocationDelegate: NSObject, CLLocationManagerDelegate {
     var last:CLLocation?
     override init() {
       super.init()

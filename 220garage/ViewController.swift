@@ -16,6 +16,16 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations[0]
@@ -32,15 +42,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         statusLabel.text = "\(location.speed)" //Optional
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
-    }
+    
 
 
 }
