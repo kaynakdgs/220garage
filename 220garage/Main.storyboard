@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="ozV-W2-5qW">
             <objects>
-                <viewController id="shx-s0-zal" customClass="HomeViewController" customModule="_20garage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyFirstScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="shx-s0-zal" customClass="HomeViewController" customModule="_20garage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9r-0g-2RW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,8 +27,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-wt-tHl" userLabel="Speed View">
                                         <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LETS RİDE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGW-mu-uFc">
-                                                <rect key="frame" x="37.5" y="80" width="300" height="62.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LETS RİDE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="TGW-mu-uFc">
+                                                <rect key="frame" x="37.5" y="11" width="300" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="aTa-ug-Upv"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="54"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -78,6 +81,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <state key="normal" title="HUD"/>
+                                                        <connections>
+                                                            <action selector="hudButton:" destination="shx-s0-zal" eventType="touchUpInside" id="N7u-ff-QWU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -117,14 +123,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-eb-tKU">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-eb-tKU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze2-1E-ucL">
-                                <rect key="frame" x="151.5" y="537" width="72.5" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-pn-LUH">
+                                <rect key="frame" x="119.5" y="486" width="136" height="136"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="aRO-0I-BKn"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="jrN-KU-HVp"/>
+                                    <constraint firstAttribute="height" constant="136" id="oPC-Qb-0YA"/>
+                                    <constraint firstAttribute="width" constant="136" id="wdF-UF-vEa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
+                                <state key="normal" title="MAİN"/>
+                                <connections>
+                                    <action selector="mainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekM-2k-0pJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ze2-1E-ucL">
+                                <rect key="frame" x="125" y="35" width="125" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="Mvl-qf-bAM"/>
+                                    <constraint firstAttribute="width" constant="125" id="qk0-aj-y2c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -134,12 +153,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ze2-1E-ucL" secondAttribute="bottom" constant="50" id="5BI-X0-efL"/>
-                            <constraint firstItem="dhB-eb-tKU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EFM-CW-dko"/>
-                            <constraint firstItem="dhB-eb-tKU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PiY-Qh-epc"/>
-                            <constraint firstItem="dhB-eb-tKU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZUi-hu-y5l"/>
-                            <constraint firstItem="Ze2-1E-ucL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cW7-Wz-g9R"/>
-                            <constraint firstItem="dhB-eb-tKU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pjz-mY-93d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NRF-pn-LUH" secondAttribute="bottom" constant="45" id="6fb-p7-67a"/>
+                            <constraint firstItem="Ze2-1E-ucL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g4Y-Qa-BAE"/>
+                            <constraint firstItem="Ze2-1E-ucL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="l29-kG-8vl"/>
+                            <constraint firstItem="NRF-pn-LUH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uGK-qI-rNi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -149,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-190" y="-57"/>
+            <point key="canvasLocation" x="-191.19999999999999" y="-57.121439280359823"/>
         </scene>
     </scenes>
     <resources>

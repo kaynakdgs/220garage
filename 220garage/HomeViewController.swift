@@ -16,8 +16,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
     var startLocation = true
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,11 +28,13 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     }
     
     @IBAction func openMap(_ sender: UIButton) {
+        self.dismiss(animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "MySecondScreen") ; // MySecondSecreen the storyboard ID
         self.present(vc, animated: true, completion: nil);
     } //Map button open map screen
     
+
     
     @IBAction func startButton(_ sender: UIButton) {
         if startLocation {
@@ -61,7 +62,10 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
             
-        statusLabel.text = "\(location.speed)"
+        let mps = location.speed
+        let km = mps * 3.6
+        
+        statusLabel.text = "\(Int(km.rounded()))"
     }
     
 }

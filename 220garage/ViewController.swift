@@ -16,6 +16,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +27,19 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
     }
     
+    @IBAction func mainButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "MyFirstScreen") ; // MyFirstSecreen the storyboard ID
+        self.present(vc, animated: true, completion: nil);
+    } //Main button open main screen
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations[0]
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.03 , longitudeDelta: 0.03)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005 , longitudeDelta: 0.005)
         let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         
         let region = MKCoordinateRegion(center: myLocation, span: span)
@@ -39,7 +48,12 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
         self.mapView.showsUserLocation = true
         
-        statusLabel.text = "\(location.speed)" //Optional
+        let mps = location.speed
+        let km = mps * 3.6
+        
+        
+        
+        statusLabel.text = "\(Int(km.rounded()))" //Optional
     }
     
     
