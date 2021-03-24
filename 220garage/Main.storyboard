@@ -82,7 +82,7 @@
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <state key="normal" title="HUD"/>
                                                         <connections>
-                                                            <action selector="hudButton:" destination="shx-s0-zal" eventType="touchUpInside" id="N7u-ff-QWU"/>
+                                                            <action selector="hudButton:" destination="shx-s0-zal" eventType="touchUpInside" id="VKB-QZ-Xf6"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

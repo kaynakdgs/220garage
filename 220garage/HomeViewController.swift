@@ -16,6 +16,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
     var startLocation = true
+    var hudView = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,16 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     } //Map button open map screen
     
 
+    @IBAction func hudButton(_ sender: UIButton) {
+        if hudView {
+            hudView = false
+            view.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        } else {
+            hudView = true
+            self.view.transform = CGAffineTransform.identity
+        }
+        
+    }
     
     @IBAction func startButton(_ sender: UIButton) {
         if startLocation {
