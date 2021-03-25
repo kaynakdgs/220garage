@@ -54,7 +54,6 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             startButton.setTitleColor(UIColor.red, for: .normal)
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-            statusLabel.font = statusLabel.font.withSize(120)
         } else {
             startLocation = true
             startButton.setTitle("START", for: .normal)
@@ -74,7 +73,8 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-            
+        statusLabel.font = statusLabel.font.withSize(120)
+        
         let mps = location.speed
         let km = mps * 3.6
         
