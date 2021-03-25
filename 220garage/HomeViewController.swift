@@ -54,12 +54,14 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             startButton.setTitleColor(UIColor.red, for: .normal)
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
+            statusLabel.font = statusLabel.font.withSize(120)
         } else {
             startLocation = true
             startButton.setTitle("START", for: .normal)
             startButton.setTitleColor(UIColor.green, for: .normal)
             statusLabel.text = "LETS RİDE!"
             locationManager.stopUpdatingLocation()
+            statusLabel.font = statusLabel.font.withSize(54)
         }
         
     }
@@ -77,6 +79,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         let km = mps * 3.6
         
         statusLabel.text = "\(Int(km.rounded()))"
+        
     }
     
 }
