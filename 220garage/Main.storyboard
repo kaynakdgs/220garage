@@ -66,9 +66,12 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="221.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uo-mF-uno">
-                                                                <rect key="frame" x="34" y="94.5" width="56" height="32"/>
+                                                                <rect key="frame" x="27" y="75.5" width="70" height="70"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="70" id="3dV-Af-jBW"/>
+                                                                    <constraint firstAttribute="width" constant="70" id="fvb-ej-ylF"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <state key="normal" title="START"/>
                                                                 <connections>
                                                                     <action selector="startButton:" destination="shx-s0-zal" eventType="touchUpInside" id="iGL-M1-ZJz"/>
                                                                 </connections>
@@ -82,17 +85,21 @@
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="Zqt-LH-RxX"/>
+                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="UIQ-fF-dUh"/>
+                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerY" secondItem="C7b-IW-CG9" secondAttribute="centerY" id="X2R-HT-cxU"/>
                                                             <constraint firstItem="gB7-yY-jSk" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="kyR-T7-0dC"/>
                                                             <constraint firstItem="gB7-yY-jSk" firstAttribute="centerY" secondItem="C7b-IW-CG9" secondAttribute="centerY" id="tA5-M2-j1Z"/>
-                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerY" secondItem="C7b-IW-CG9" secondAttribute="centerY" id="u8L-S9-MW4"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEQ-d2-8dI" userLabel="Map">
                                                         <rect key="frame" x="125.5" y="0.0" width="124" height="221.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-ug-VsE">
-                                                                <rect key="frame" x="43" y="94.5" width="38" height="32"/>
+                                                                <rect key="frame" x="27" y="75.5" width="70" height="70"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="70" id="fEb-bB-hJD"/>
+                                                                    <constraint firstAttribute="width" constant="70" id="vVo-pk-50O"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <state key="normal" title="MAP"/>
                                                                 <connections>
@@ -108,24 +115,27 @@
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerX" secondItem="XEQ-d2-8dI" secondAttribute="centerX" id="62D-bp-q5j"/>
                                                             <constraint firstItem="sbp-rl-zzT" firstAttribute="centerY" secondItem="XEQ-d2-8dI" secondAttribute="centerY" id="YeJ-eN-KFd"/>
-                                                            <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerY" secondItem="XEQ-d2-8dI" secondAttribute="centerY" id="ea9-MS-NUm"/>
+                                                            <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerY" secondItem="XEQ-d2-8dI" secondAttribute="centerY" id="nz7-4A-8Lj"/>
                                                             <constraint firstItem="sbp-rl-zzT" firstAttribute="centerX" secondItem="XEQ-d2-8dI" secondAttribute="centerX" id="tIl-Gj-QOC"/>
+                                                            <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerX" secondItem="XEQ-d2-8dI" secondAttribute="centerX" id="zI2-e8-gRr"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tco-a8-Z0z" userLabel="Hud">
                                                         <rect key="frame" x="250.5" y="0.0" width="124.5" height="221.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5s-Zc-15v">
-                                                                <rect key="frame" x="43" y="94.5" width="39" height="32"/>
+                                                                <rect key="frame" x="27.5" y="75.5" width="70" height="70"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="70" id="jSe-RS-nQb"/>
+                                                                    <constraint firstAttribute="height" constant="70" id="lw4-NO-Yn6"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <state key="normal" title="HUD"/>
                                                                 <connections>
                                                                     <action selector="hudButton:" destination="shx-s0-zal" eventType="touchUpInside" id="VKB-QZ-Xf6"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pOe-Nr-MN4" userLabel="Hud View">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flip" translatesAutoresizingMaskIntoConstraints="NO" id="pOe-Nr-MN4" userLabel="Hud View">
                                                                 <rect key="frame" x="27.5" y="75.5" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="8em-TH-CC8"/>
@@ -134,10 +144,10 @@
                                                             </imageView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="V5s-Zc-15v" firstAttribute="centerX" secondItem="Tco-a8-Z0z" secondAttribute="centerX" id="BIT-sd-DCf"/>
-                                                            <constraint firstItem="V5s-Zc-15v" firstAttribute="centerY" secondItem="Tco-a8-Z0z" secondAttribute="centerY" id="C8a-HA-fCA"/>
                                                             <constraint firstItem="pOe-Nr-MN4" firstAttribute="centerX" secondItem="Tco-a8-Z0z" secondAttribute="centerX" id="KHx-Ju-ZEh"/>
                                                             <constraint firstItem="pOe-Nr-MN4" firstAttribute="centerY" secondItem="Tco-a8-Z0z" secondAttribute="centerY" id="Kng-eP-OjP"/>
+                                                            <constraint firstItem="V5s-Zc-15v" firstAttribute="centerY" secondItem="Tco-a8-Z0z" secondAttribute="centerY" id="URj-9S-eZL"/>
+                                                            <constraint firstItem="V5s-Zc-15v" firstAttribute="centerX" secondItem="Tco-a8-Z0z" secondAttribute="centerX" id="wWC-gE-5iY"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -185,6 +195,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dhB-eb-tKU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ze2-1E-ucL">
+                                <rect key="frame" x="125" y="35" width="125" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="Mvl-qf-bAM"/>
+                                    <constraint firstAttribute="width" constant="125" id="qk0-aj-y2c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-pn-LUH">
                                 <rect key="frame" x="137.5" y="509" width="100" height="100"/>
                                 <constraints>
@@ -196,16 +216,6 @@
                                     <action selector="mainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekM-2k-0pJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ze2-1E-ucL">
-                                <rect key="frame" x="125" y="35" width="125" height="103"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="103" id="Mvl-qf-bAM"/>
-                                    <constraint firstAttribute="width" constant="125" id="qk0-aj-y2c"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_OK_2" translatesAutoresizingMaskIntoConstraints="NO" id="8wF-kD-rBL">
                                 <rect key="frame" x="137.5" y="509" width="100" height="100"/>
                                 <constraints>
@@ -242,6 +252,7 @@
     <resources>
         <image name="AppleMaps_logo" width="83" height="83"/>
         <image name="Untitled-2" width="426.5" height="240"/>
+        <image name="flip" width="170.5" height="170.5"/>
         <image name="logo_OK_2" width="1240.5" height="953"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

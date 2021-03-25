@@ -13,6 +13,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
+    
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
     var startLocation = true
@@ -24,7 +25,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        startButton.setTitleColor(UIColor.green, for: .normal)
+        startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
         
     }
     
@@ -50,14 +51,12 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     @IBAction func startButton(_ sender: UIButton) {
         if startLocation {
             startLocation = false
-            startButton.setTitle("STOP", for: .normal)
-            startButton.setTitleColor(UIColor.red, for: .normal)
+            startButton.setImage(UIImage(named: "stop-button")?.withRenderingMode(.alwaysOriginal), for: [])
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         } else {
             startLocation = true
-            startButton.setTitle("START", for: .normal)
-            startButton.setTitleColor(UIColor.green, for: .normal)
+            startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
             statusLabel.text = "LETS RİDE!"
             locationManager.stopUpdatingLocation()
             statusLabel.font = statusLabel.font.withSize(54)
