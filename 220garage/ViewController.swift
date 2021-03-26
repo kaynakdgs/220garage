@@ -13,9 +13,9 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapButton: UIButton!
     
     let manager = CLLocationManager()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,8 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        
+        mapButton.setImage(UIImage(named: "logo_OK_2")?.withRenderingMode(.alwaysOriginal), for: [])
         
     }
     
@@ -50,8 +52,6 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
         let mps = location.speed
         let km = mps * 3.6
-        
-        
         
         statusLabel.text = "\(Int(km.rounded()))" //Optional
     }

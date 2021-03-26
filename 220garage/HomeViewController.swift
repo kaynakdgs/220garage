@@ -12,7 +12,8 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
-    
+    @IBOutlet weak var openMap: UIButton!
+    @IBOutlet weak var hudButton: UIButton!
     
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
@@ -22,11 +23,14 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.shared.isIdleTimerDisabled = true // screen always on
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
-        
+        openMap.setImage(UIImage(named: "AppleMaps_logo")?.withRenderingMode(.alwaysOriginal), for: [])
+        hudButton.setImage(UIImage(named: "flip")?.withRenderingMode(.alwaysOriginal), for: [])
     }
     
     @IBAction func openMap(_ sender: UIButton) {

@@ -76,55 +76,36 @@
                                                                     <action selector="startButton:" destination="shx-s0-zal" eventType="touchUpInside" id="iGL-M1-ZJz"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gB7-yY-jSk" userLabel="Start View">
-                                                                <rect key="frame" x="27" y="75.5" width="70" height="70"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="70" id="0iV-Wh-vnc"/>
-                                                                    <constraint firstAttribute="height" constant="70" id="Nas-4C-mQw"/>
-                                                                </constraints>
-                                                            </imageView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="0uo-mF-uno" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="UIQ-fF-dUh"/>
                                                             <constraint firstItem="0uo-mF-uno" firstAttribute="centerY" secondItem="C7b-IW-CG9" secondAttribute="centerY" id="X2R-HT-cxU"/>
-                                                            <constraint firstItem="gB7-yY-jSk" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="kyR-T7-0dC"/>
-                                                            <constraint firstItem="gB7-yY-jSk" firstAttribute="centerY" secondItem="C7b-IW-CG9" secondAttribute="centerY" id="tA5-M2-j1Z"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEQ-d2-8dI" userLabel="Map">
                                                         <rect key="frame" x="125.5" y="0.0" width="124" height="221.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-ug-VsE">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-ug-VsE" userLabel="Map Button">
                                                                 <rect key="frame" x="27" y="75.5" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="fEb-bB-hJD"/>
                                                                     <constraint firstAttribute="width" constant="70" id="vVo-pk-50O"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                                                <state key="normal" title="MAP"/>
                                                                 <connections>
                                                                     <action selector="openMap:" destination="shx-s0-zal" eventType="touchUpInside" id="lo5-1f-Euh"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppleMaps_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sbp-rl-zzT" userLabel="Map View">
-                                                                <rect key="frame" x="27" y="75.5" width="70" height="70"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="70" id="LLp-Ak-QDR"/>
-                                                                    <constraint firstAttribute="width" constant="70" id="ruz-sb-MO2"/>
-                                                                </constraints>
-                                                            </imageView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="sbp-rl-zzT" firstAttribute="centerY" secondItem="XEQ-d2-8dI" secondAttribute="centerY" id="YeJ-eN-KFd"/>
                                                             <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerY" secondItem="XEQ-d2-8dI" secondAttribute="centerY" id="nz7-4A-8Lj"/>
-                                                            <constraint firstItem="sbp-rl-zzT" firstAttribute="centerX" secondItem="XEQ-d2-8dI" secondAttribute="centerX" id="tIl-Gj-QOC"/>
                                                             <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerX" secondItem="XEQ-d2-8dI" secondAttribute="centerX" id="zI2-e8-gRr"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tco-a8-Z0z" userLabel="Hud">
                                                         <rect key="frame" x="250.5" y="0.0" width="124.5" height="221.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5s-Zc-15v">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5s-Zc-15v" userLabel="hudButton">
                                                                 <rect key="frame" x="27.5" y="75.5" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="jSe-RS-nQb"/>
@@ -135,17 +116,8 @@
                                                                     <action selector="hudButton:" destination="shx-s0-zal" eventType="touchUpInside" id="VKB-QZ-Xf6"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flip" translatesAutoresizingMaskIntoConstraints="NO" id="pOe-Nr-MN4" userLabel="Hud View">
-                                                                <rect key="frame" x="27.5" y="75.5" width="70" height="70"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="70" id="8em-TH-CC8"/>
-                                                                    <constraint firstAttribute="height" constant="70" id="o5K-0V-YC2"/>
-                                                                </constraints>
-                                                            </imageView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="pOe-Nr-MN4" firstAttribute="centerX" secondItem="Tco-a8-Z0z" secondAttribute="centerX" id="KHx-Ju-ZEh"/>
-                                                            <constraint firstItem="pOe-Nr-MN4" firstAttribute="centerY" secondItem="Tco-a8-Z0z" secondAttribute="centerY" id="Kng-eP-OjP"/>
                                                             <constraint firstItem="V5s-Zc-15v" firstAttribute="centerY" secondItem="Tco-a8-Z0z" secondAttribute="centerY" id="URj-9S-eZL"/>
                                                             <constraint firstItem="V5s-Zc-15v" firstAttribute="centerX" secondItem="Tco-a8-Z0z" secondAttribute="centerX" id="wWC-gE-5iY"/>
                                                         </constraints>
@@ -176,6 +148,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hudButton" destination="V5s-Zc-15v" id="rqS-le-hNJ"/>
+                        <outlet property="openMap" destination="e0Q-ug-VsE" id="Awp-6E-t77"/>
                         <outlet property="startButton" destination="0uo-mF-uno" id="8W4-AL-Gv7"/>
                         <outlet property="statusLabel" destination="TGW-mu-uFc" id="3tU-uy-l37"/>
                     </connections>
@@ -205,41 +179,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-pn-LUH">
-                                <rect key="frame" x="137.5" y="509" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-pn-LUH">
+                                <rect key="frame" x="152.5" y="547" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="oPC-Qb-0YA"/>
-                                    <constraint firstAttribute="width" constant="100" id="wdF-UF-vEa"/>
+                                    <constraint firstAttribute="height" constant="70" id="oPC-Qb-0YA"/>
+                                    <constraint firstAttribute="width" constant="70" id="wdF-UF-vEa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <connections>
                                     <action selector="mainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekM-2k-0pJ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_OK_2" translatesAutoresizingMaskIntoConstraints="NO" id="8wF-kD-rBL">
-                                <rect key="frame" x="137.5" y="509" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Q4S-B7-OKF"/>
-                                    <constraint firstAttribute="width" constant="100" id="m0l-Zh-aZ8"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NRF-pn-LUH" secondAttribute="bottom" constant="58" id="6fb-p7-67a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NRF-pn-LUH" secondAttribute="bottom" constant="50" id="6fb-p7-67a"/>
                             <constraint firstItem="dhB-eb-tKU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Tc6-FD-l04"/>
                             <constraint firstItem="dhB-eb-tKU" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="XaE-d1-FiK"/>
                             <constraint firstItem="dhB-eb-tKU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dga-wK-Eas"/>
-                            <constraint firstItem="8wF-kD-rBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e63-pt-5wP"/>
                             <constraint firstItem="Ze2-1E-ucL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g4Y-Qa-BAE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8wF-kD-rBL" secondAttribute="bottom" constant="58" id="hCk-eX-3g5"/>
                             <constraint firstItem="Ze2-1E-ucL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="l29-kG-8vl"/>
                             <constraint firstItem="dhB-eb-tKU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mAM-iP-oHz"/>
                             <constraint firstItem="NRF-pn-LUH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uGK-qI-rNi"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapButton" destination="NRF-pn-LUH" id="76D-8L-2LF"/>
                         <outlet property="mapView" destination="dhB-eb-tKU" id="kry-Cu-vBN"/>
                         <outlet property="statusLabel" destination="Ze2-1E-ucL" id="ML9-nk-Vgx"/>
                     </connections>
@@ -250,10 +216,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppleMaps_logo" width="83" height="83"/>
         <image name="Untitled-2" width="426.5" height="240"/>
-        <image name="flip" width="170.5" height="170.5"/>
-        <image name="logo_OK_2" width="1240.5" height="953"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
