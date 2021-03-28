@@ -16,6 +16,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     @IBOutlet weak var mapButton: UIButton!
     
     let manager = CLLocationManager()
+    var startLocation = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,11 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
         mapButton.setImage(UIImage(named: "logo_OK_2")?.withRenderingMode(.alwaysOriginal), for: [])
         
+        
     }
     
     @IBAction func mainButton(_ sender: UIButton) {
         self.dismiss(animated: true)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "MyFirstScreen") ; // MyFirstSecreen the storyboard ID
-        self.present(vc, animated: true, completion: nil);
     } //Main button open main screen
     
     
@@ -50,14 +49,13 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
         self.mapView.showsUserLocation = true
         
-        let mps = location.speed
-        let km = mps * 3.6
+        if !startLocation {
+            let mps = location.speed
+            let km = mps * 3.6
+            statusLabel.text = "\(Int(km.rounded()))" //Optional
+        }
         
-        statusLabel.text = "\(Int(km.rounded()))" //Optional
     }
-    
-    
-
 
 }
 

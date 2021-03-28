@@ -17,7 +17,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
-    var startLocation = true
+    var startLocation = false
     var hudView = true
 
     override func viewDidLoad() {
@@ -34,10 +34,10 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     }
     
     @IBAction func openMap(_ sender: UIButton) {
-        self.dismiss(animated: true)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "MySecondScreen") ; // MySecondSecreen the storyboard ID
-        self.present(vc, animated: true, completion: nil);
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MySecondScreen") as! ViewController // MySecondSecreen the storyboard ID
+        vc.startLocation = startLocation
+        self.present(vc, animated: true, completion: nil)
     } //Map button open map screen
     
 
