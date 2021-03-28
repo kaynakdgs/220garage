@@ -28,13 +28,11 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
         mapButton.setImage(UIImage(named: "logo_OK_2")?.withRenderingMode(.alwaysOriginal), for: [])
         
-        
     }
     
     @IBAction func mainButton(_ sender: UIButton) {
         self.dismiss(animated: true)
-    } //Main button open main screen
-    
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -54,7 +52,6 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
             let km = mps * 3.6
             statusLabel.text = "\(Int(km.rounded()))" //Optional
         }
-        
     }
 
 }

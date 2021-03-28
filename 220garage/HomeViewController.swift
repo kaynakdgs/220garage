@@ -17,7 +17,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
-    var startLocation = false
+    var startLocation = true
     var hudView = true
 
     override func viewDidLoad() {
@@ -84,5 +84,4 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         statusLabel.text = "\(Int(km.rounded()))"
         
     }
-    
 }
