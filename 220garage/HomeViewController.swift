@@ -19,6 +19,16 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     let locationDelegate = LocationDelegate()
     var startLocation = true
     var hudView = true
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +47,8 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MySecondScreen") as! ViewController // MySecondSecreen the storyboard ID
         vc.startLocation = startLocation
-        self.present(vc, animated: true, completion: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        //self.present(vc, animated: true, completion: nil)
     } //Map button open map screen
     
 
@@ -59,17 +70,17 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         } else {
-            let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
-            self.addChild(popOverVc)
-            popOverVc.view.frame = self.view.frame
-            self.view.addSubview(popOverVc.view)
-            popOverVc.didMove(toParent: self)
-            
             startLocation = true
             startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
             statusLabel.text = "LETS RİDE!"
             locationManager.stopUpdatingLocation()
             statusLabel.font = statusLabel.font.withSize(54)
+            
+            let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
+            self.addChild(popOverVc)
+            popOverVc.view.frame = self.view.frame
+            self.view.addSubview(popOverVc.view)
+            popOverVc.didMove(toParent: self)
         }
         
     }
