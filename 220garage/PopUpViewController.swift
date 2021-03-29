@@ -19,6 +19,18 @@ class PopUpViewController: UIViewController {
         moveIn()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//       
+//        AppUtility.lockOrientation(.portrait)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//       
+//        AppUtility.lockOrientation(.all)
+//    }
+    
     @IBAction func closePopUp(_ sender: UIButton) {
         moveOut()
     }
@@ -39,6 +51,6 @@ class PopUpViewController: UIViewController {
             self.view.alpha = 0.0
         }) { _ in
             self.view.removeFromSuperview()
-        }
+            }
     }
 }
