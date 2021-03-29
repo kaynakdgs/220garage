@@ -59,6 +59,12 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         } else {
+            let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
+            self.addChild(popOverVc)
+            popOverVc.view.frame = self.view.frame
+            self.view.addSubview(popOverVc.view)
+            popOverVc.didMove(toParent: self)
+            
             startLocation = true
             startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
             statusLabel.text = "LETS RİDE!"

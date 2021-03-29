@@ -52,7 +52,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
             let km = mps * 3.6
             statusLabel.text = "\(Int(km.rounded()))" //Optional
         }
+        
     }
 
 }
-

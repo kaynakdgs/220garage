@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0054F55C2611D729002FDF9A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0054F55B2611D729002FDF9A /* PopUpViewController.swift */; };
 		006BE033260A1BE200E8FB3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BE032260A1BE200E8FB3E /* AppDelegate.swift */; };
 		006BE03C260A1BE200E8FB3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006BE03B260A1BE200E8FB3E /* Assets.xcassets */; };
 		006BE03F260A1BE200E8FB3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006BE03D260A1BE200E8FB3E /* LaunchScreen.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0054F55B2611D729002FDF9A /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		006BE02F260A1BE200E8FB3E /* 220garage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 220garage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006BE032260A1BE200E8FB3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006BE03B260A1BE200E8FB3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				006BE032260A1BE200E8FB3E /* AppDelegate.swift */,
 				006BE047260A1C4900E8FB3E /* HomeViewController.swift */,
+				0054F55B2611D729002FDF9A /* PopUpViewController.swift */,
 				006BE04E260A1C8E00E8FB3E /* ViewController.swift */,
 				006BE04A260A1C7000E8FB3E /* NilSpeed.swift */,
 				006BE052260A1CB400E8FB3E /* Main.storyboard */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0054F55C2611D729002FDF9A /* PopUpViewController.swift in Sources */,
 				006BE04F260A1C8E00E8FB3E /* ViewController.swift in Sources */,
 				006BE04B260A1C7000E8FB3E /* NilSpeed.swift in Sources */,
 				006BE033260A1BE200E8FB3E /* AppDelegate.swift in Sources */,
