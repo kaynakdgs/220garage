@@ -23,7 +23,7 @@ class PopUpViewController: UIViewController {
         
         maxSpeed.text = "\(maxSpeedValue)"
         averageSpeed.text = "\(averageSpeedValue)"
-        //totalDistance.text =
+        totalDistance.text = "\(totalDistanceValue)"
         
         popUpView.layer.cornerRadius = 16
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)

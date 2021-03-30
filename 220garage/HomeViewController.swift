@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import MapKit
 import CoreLocation
 
 class HomeViewController: UIViewController , CLLocationManagerDelegate {
@@ -17,6 +18,11 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
+    
+//    let location1 = CLLocation(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
+//    let location2 = CLLocation(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
+//    let distance : CLLocationDistance = location1.distanceFromLocation(location2)
+    
     var startLocation = true
     var hudView = true
     var speeds = [CLLocationSpeed]()
@@ -87,6 +93,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
             popOverVc.averageSpeedValue = Int(avgSpeed)
             popOverVc.maxSpeedValue = Int(topSpeed)
+            popOverVc.totalDistanceValue = Int()
             self.addChild(popOverVc)
             popOverVc.view.frame = self.view.frame
             self.view.addSubview(popOverVc.view)
@@ -120,5 +127,5 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     func clearValues() {
         speeds = []
     }
-    
+
 }
