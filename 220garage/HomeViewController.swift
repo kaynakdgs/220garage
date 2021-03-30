@@ -19,6 +19,14 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     let locationDelegate = LocationDelegate()
     var startLocation = true
     var hudView = true
+    var speeds = [CLLocationSpeed]()
+    var avgSpeed: CLLocationSpeed {
+        return (speeds.reduce(0,+)/Double(speeds.count)) * 3.6
+    }
+    var topSpeed: CLLocationSpeed {
+        return (speeds.max() ?? 0) * 3.6
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -77,10 +85,15 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             statusLabel.font = statusLabel.font.withSize(54)
             
             let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
+            popOverVc.averageSpeedValue = Int(avgSpeed)
+            popOverVc.maxSpeedValue = Int(topSpeed)
             self.addChild(popOverVc)
             popOverVc.view.frame = self.view.frame
             self.view.addSubview(popOverVc.view)
             popOverVc.didMove(toParent: self)
+            
+            clearValues()
+            
         }
         
     }
@@ -95,10 +108,17 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         statusLabel.font = statusLabel.font.withSize(120)
         
+        speeds.append(contentsOf: locations.map{$0.speed})
+        
         let mps = location.speed
         let km = mps * 3.6
         
         statusLabel.text = "\(Int(km.rounded()))"
         
     }
+    
+    func clearValues() {
+        speeds = []
+    }
+    
 }

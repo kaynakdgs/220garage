@@ -13,7 +13,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var mapButton: UIButton!
+
     
     let manager = CLLocationManager()
     var startLocation = false

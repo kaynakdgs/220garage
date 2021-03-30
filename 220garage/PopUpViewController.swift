@@ -10,26 +10,25 @@ import UIKit
 class PopUpViewController: UIViewController {
 
     @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var maxSpeed: UILabel!
+    @IBOutlet weak var averageSpeed: UILabel!
+    @IBOutlet weak var totalDistance: UILabel!
+    
+    var maxSpeedValue = 0
+    var averageSpeedValue = 0
+    var totalDistanceValue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        maxSpeed.text = "\(maxSpeedValue)"
+        averageSpeed.text = "\(averageSpeedValue)"
+        //totalDistance.text =
         
         popUpView.layer.cornerRadius = 16
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         moveIn()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//       
-//        AppUtility.lockOrientation(.portrait)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//       
-//        AppUtility.lockOrientation(.all)
-//    }
     
     @IBAction func closePopUp(_ sender: UIButton) {
         moveOut()
