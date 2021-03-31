@@ -18,13 +18,14 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let locationDelegate = LocationDelegate()
-    
-//    let location1 = CLLocation(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-//    let location2 = CLLocation(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-//    let distance : CLLocationDistance = location1.distanceFromLocation(location2)
-    
     var startLocation = true
     var hudView = true
+    
+    var firstLocation: CLLocation!
+    var lastLocation: CLLocation!
+    var startDate: Date!
+    var traveledDistance = 0
+    
     var speeds = [CLLocationSpeed]()
     var avgSpeed: CLLocationSpeed {
         return (speeds.reduce(0,+)/Double(speeds.count)) * 3.6
@@ -33,6 +34,16 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         return (speeds.max() ?? 0) * 3.6
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        UIApplication.shared.isIdleTimerDisabled = true // screen always on
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        buttonImages()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -43,29 +54,16 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        UIApplication.shared.isIdleTimerDisabled = true // screen always on
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
-        openMap.setImage(UIImage(named: "AppleMaps_logo")?.withRenderingMode(.alwaysOriginal), for: [])
-        hudButton.setImage(UIImage(named: "flip")?.withRenderingMode(.alwaysOriginal), for: [])
-    }
     
+    //Map button open map screen
     @IBAction func openMap(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MySecondScreen") as! ViewController // MySecondSecreen the storyboard ID
         vc.startLocation = startLocation
         vc.modalPresentationStyle = .overFullScreen
-        //self.present(vc, animated: true, completion: nil)
-    } //Map button open map screen
+    }
     
-
+    //Hud button open mirror effect
     @IBAction func hudButton(_ sender: UIButton) {
         if hudView {
             hudView = false
@@ -77,6 +75,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         
     }
     
+    //Start-Stop button
     @IBAction func startButton(_ sender: UIButton) {
         if startLocation {
             startLocation = false
@@ -93,7 +92,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
             popOverVc.averageSpeedValue = Int(avgSpeed)
             popOverVc.maxSpeedValue = Int(topSpeed)
-            popOverVc.totalDistanceValue = Int()
+            popOverVc.totalDistanceValue = Int(traveledDistance)
             self.addChild(popOverVc)
             popOverVc.view.frame = self.view.frame
             self.view.addSubview(popOverVc.view)
@@ -122,10 +121,34 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         
         statusLabel.text = "\(Int(km.rounded()))"
         
+        if startDate == nil {
+            startDate = Date()
+        } else {
+            print("elapsedTime:", String(format: "%.0fs", Date().timeIntervalSince(startDate)))
+        }
+        if firstLocation == nil {
+            firstLocation = locations.first
+        } else if let location = locations.last {
+            traveledDistance += Int(lastLocation.distance(from: location))
+            print("Traveled Distance:",  traveledDistance)
+            print("Straight Distance:", firstLocation.distance(from: locations.last!))
+        }
+        lastLocation = locations.first
+        
+    }
+    
+    func buttonImages() {
+        startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
+        openMap.setImage(UIImage(named: "AppleMaps_logo")?.withRenderingMode(.alwaysOriginal), for: [])
+        hudButton.setImage(UIImage(named: "flip")?.withRenderingMode(.alwaysOriginal), for: [])
     }
     
     func clearValues() {
         speeds = []
+        traveledDistance = 0
+        firstLocation = nil
+        lastLocation = nil
+        startDate = nil
     }
-
+    
 }
