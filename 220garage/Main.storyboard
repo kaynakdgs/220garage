@@ -28,14 +28,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="207"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-2" translatesAutoresizingMaskIntoConstraints="NO" id="QpA-3b-aAZ">
-                                                <rect key="frame" x="55" y="22" width="264" height="161.5"/>
+                                                <rect key="frame" x="99.5" y="50" width="176" height="107"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="176" id="HFN-i7-Ixd"/>
+                                                    <constraint firstAttribute="height" constant="107" id="XfX-Uu-qPE"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="QpA-3b-aAZ" firstAttribute="top" secondItem="NJn-6I-cN1" secondAttribute="top" constant="22" id="FQY-hd-wQv"/>
-                                            <constraint firstAttribute="trailing" secondItem="QpA-3b-aAZ" secondAttribute="trailing" constant="56" id="Qg4-dQ-j8c"/>
-                                            <constraint firstItem="QpA-3b-aAZ" firstAttribute="leading" secondItem="NJn-6I-cN1" secondAttribute="leading" constant="55" id="cK8-cw-obd"/>
-                                            <constraint firstAttribute="bottom" secondItem="QpA-3b-aAZ" secondAttribute="bottom" constant="23.5" id="zgR-uB-4nH"/>
+                                            <constraint firstItem="QpA-3b-aAZ" firstAttribute="centerY" secondItem="NJn-6I-cN1" secondAttribute="centerY" id="e8s-Ql-EPE"/>
+                                            <constraint firstItem="QpA-3b-aAZ" firstAttribute="centerX" secondItem="NJn-6I-cN1" secondAttribute="centerX" id="zpN-1O-B1P"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCr-wt-tHl" userLabel="Speed View">
@@ -66,7 +68,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="207"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uo-mF-uno">
-                                                                <rect key="frame" x="27" y="68.5" width="70" height="70"/>
+                                                                <rect key="frame" x="27" y="107" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="3dV-Af-jBW"/>
                                                                     <constraint firstAttribute="width" constant="70" id="fvb-ej-ylF"/>
@@ -78,15 +80,15 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="UIQ-fF-dUh"/>
-                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerY" secondItem="C7b-IW-CG9" secondAttribute="centerY" id="X2R-HT-cxU"/>
+                                                            <constraint firstItem="0uo-mF-uno" firstAttribute="centerX" secondItem="C7b-IW-CG9" secondAttribute="centerX" id="Ikv-aY-kxm"/>
+                                                            <constraint firstAttribute="bottom" secondItem="0uo-mF-uno" secondAttribute="bottom" constant="30" id="Pnc-Nb-X9z"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEQ-d2-8dI" userLabel="Map">
                                                         <rect key="frame" x="125.5" y="0.0" width="124" height="207"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0Q-ug-VsE" userLabel="Map Button">
-                                                                <rect key="frame" x="27" y="68.5" width="70" height="70"/>
+                                                                <rect key="frame" x="27" y="107" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="fEb-bB-hJD"/>
                                                                     <constraint firstAttribute="width" constant="70" id="vVo-pk-50O"/>
@@ -99,7 +101,7 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerY" secondItem="XEQ-d2-8dI" secondAttribute="centerY" id="nz7-4A-8Lj"/>
+                                                            <constraint firstAttribute="bottom" secondItem="e0Q-ug-VsE" secondAttribute="bottom" constant="30" id="rao-2Z-hBV"/>
                                                             <constraint firstItem="e0Q-ug-VsE" firstAttribute="centerX" secondItem="XEQ-d2-8dI" secondAttribute="centerX" id="zI2-e8-gRr"/>
                                                         </constraints>
                                                     </view>
@@ -107,7 +109,7 @@
                                                         <rect key="frame" x="250.5" y="0.0" width="124.5" height="207"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5s-Zc-15v" userLabel="hudButton">
-                                                                <rect key="frame" x="27.5" y="68.5" width="70" height="70"/>
+                                                                <rect key="frame" x="27.5" y="107" width="70" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="jSe-RS-nQb"/>
                                                                     <constraint firstAttribute="height" constant="70" id="lw4-NO-Yn6"/>
@@ -119,7 +121,7 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="V5s-Zc-15v" firstAttribute="centerY" secondItem="Tco-a8-Z0z" secondAttribute="centerY" id="URj-9S-eZL"/>
+                                                            <constraint firstAttribute="bottom" secondItem="V5s-Zc-15v" secondAttribute="bottom" constant="30" id="XP6-bq-ui2"/>
                                                             <constraint firstItem="V5s-Zc-15v" firstAttribute="centerX" secondItem="Tco-a8-Z0z" secondAttribute="centerX" id="wWC-gE-5iY"/>
                                                         </constraints>
                                                     </view>
@@ -160,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="-167.19999999999999" y="-57.121439280359823"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MySecondScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="_20garage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MySecondScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MapViewController" customModule="_20garage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -37,12 +37,13 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonImages()
+        
         UIApplication.shared.isIdleTimerDisabled = true // screen always on
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        buttonImages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,10 +58,9 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     //Map button open map screen
     @IBAction func openMap(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MySecondScreen") as! ViewController // MySecondSecreen the storyboard ID
-        vc.startLocation = startLocation
-        vc.modalPresentationStyle = .overFullScreen
+        let mapViewVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MySecondScreen") as! MapViewController
+        mapViewVc.startLocation = startLocation
+        mapViewVc.modalPresentationStyle = .overFullScreen
     }
     
     //Hud button open mirror effect
@@ -112,7 +112,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-        statusLabel.font = statusLabel.font.withSize(120)
+        statusLabel.font = statusLabel.font.withSize(175)
         
         speeds.append(contentsOf: locations.map{$0.speed})
         
@@ -121,6 +121,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         
         statusLabel.text = "\(Int(km.rounded()))"
         
+        //Total Distance
         if startDate == nil {
             startDate = Date()
         } else {
@@ -141,6 +142,7 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
         openMap.setImage(UIImage(named: "AppleMaps_logo")?.withRenderingMode(.alwaysOriginal), for: [])
         hudButton.setImage(UIImage(named: "flip")?.withRenderingMode(.alwaysOriginal), for: [])
+        
     }
     
     func clearValues() {
