@@ -36,14 +36,9 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        buttonImages()
-        
         UIApplication.shared.isIdleTimerDisabled = true // screen always on
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
+        setButtonImages()
+        setLocationManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +67,6 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             hudView = true
             self.view.transform = CGAffineTransform.identity
         }
-        
     }
     
     //Start-Stop button
@@ -89,31 +83,17 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             statusLabel.font = statusLabel.font.withSize(54)
             
-            let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
-            popOverVc.averageSpeedValue = Int(avgSpeed)
-            popOverVc.maxSpeedValue = Int(topSpeed)
-            popOverVc.totalDistanceValue = Int(traveledDistance)
-            self.addChild(popOverVc)
-            popOverVc.view.frame = self.view.frame
-            self.view.addSubview(popOverVc.view)
-            popOverVc.didMove(toParent: self)
-            
+            showPopUp()
             clearValues()
-            
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            
         let location = locations[0]
-            
-        print(location.speed)
-            
+        
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
         statusLabel.font = statusLabel.font.withSize(175)
-        
         speeds.append(contentsOf: locations.map{$0.speed})
         
         let mps = location.speed
@@ -135,14 +115,12 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
             print("Straight Distance:", firstLocation.distance(from: locations.last!))
         }
         lastLocation = locations.first
-        
     }
     
-    func buttonImages() {
+    func setButtonImages() {
         startButton.setImage(UIImage(named: "power")?.withRenderingMode(.alwaysOriginal), for: [])
         openMap.setImage(UIImage(named: "AppleMaps_logo")?.withRenderingMode(.alwaysOriginal), for: [])
         hudButton.setImage(UIImage(named: "flip")?.withRenderingMode(.alwaysOriginal), for: [])
-        
     }
     
     func clearValues() {
@@ -151,6 +129,22 @@ class HomeViewController: UIViewController , CLLocationManagerDelegate {
         firstLocation = nil
         lastLocation = nil
         startDate = nil
+    }
+    
+    func showPopUp() {
+        let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpController") as! PopUpViewController
+        popOverVc.averageSpeedValue = Int(avgSpeed)
+        popOverVc.maxSpeedValue = Int(topSpeed)
+        popOverVc.totalDistanceValue = Int(traveledDistance)
+        self.addChild(popOverVc)
+        popOverVc.view.frame = self.view.frame
+        self.view.addSubview(popOverVc.view)
+        popOverVc.didMove(toParent: self)
+    }
+    
+    fileprivate func setLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
 }

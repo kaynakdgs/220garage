@@ -14,22 +14,29 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
-    
     let manager = CLLocationManager()
     var startLocation = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationBarColor()
-        
+        setupLocationManager()
+    }
+    
+    fileprivate func setupLocationManager() {
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        
     }
         
+    func navigationBarColor() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations[0]
@@ -49,13 +56,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
             statusLabel.text = "\(Int(km.rounded()))" //Optional
         }
         
-    }
-    
-    func navigationBarColor() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
     }
     
 }

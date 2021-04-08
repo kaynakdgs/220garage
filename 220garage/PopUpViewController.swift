@@ -21,10 +21,8 @@ class PopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        valueTexts()
-        
-        popUpView.layer.cornerRadius = 16
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        setValueTexts()
+        setupView()
         moveIn()
     }
     
@@ -51,9 +49,15 @@ class PopUpViewController: UIViewController {
             }
     }
     
-    func valueTexts() {
+    func setValueTexts() {
         maxSpeed.text = "\(maxSpeedValue) km"
         averageSpeed.text = "\(averageSpeedValue) km"
         totalDistance.text = "\(totalDistanceValue) m"
     }
+    
+    func setupView() {
+        popUpView.layer.cornerRadius = 16
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    }
+    
 }
